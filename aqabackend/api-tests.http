@@ -1,0 +1,111 @@
+### PRODUCTION API TESTS (Vercel Deployment)
+@baseUrl = https://aqabackend-9llxvgslt-adithyavennas-projects.vercel.app
+
+### LOCAL API TESTS
+@localUrl = http://localhost:3000
+
+### ==== PRODUCTION TESTS ====
+
+### 1. Health Check (Production)
+GET {{baseUrl}}/
+
+###
+
+### 2. Signup - New User (Production)
+POST {{baseUrl}}/api/auth/signup
+Content-Type: application/json
+
+{
+  "fullName": "Farmer John",
+  "farmName": "Sunny Creek Farm",
+  "email": "farmer@aqashrimp.ai",
+  "phone": "+15550192",
+  "preferredLanguage": "English",
+  "password": "password123"
+}
+
+###
+
+### 3. Login (Production)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "farmer@aqashrimp.ai",
+  "password": "password123"
+}
+
+###
+
+### 4. Get User Profile (Production - Replace TOKEN with actual JWT)
+GET {{baseUrl}}/api/user/profile
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+###
+
+### 5. Update User Profile (Production - Replace TOKEN with actual JWT)
+PUT {{baseUrl}}/api/user/profile
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+{
+  "fullName": "Updated Farmer John",
+  "farmName": "Updated Farm Name",
+  "phone": "+919999999999",
+  "preferredLanguage": "Telugu"
+}
+
+###
+
+### ==== LOCAL TESTS ====
+
+### 1. Health Check (Local)
+GET {{localUrl}}/
+
+###
+
+### 2. Signup - New User (Local)
+POST {{localUrl}}/api/auth/signup
+Content-Type: application/json
+
+{
+  "fullName": "Farmer John",
+  "farmName": "Sunny Creek Farm",
+  "email": "farmer@aqashrimp.ai",
+  "phone": "+15550192",
+  "preferredLanguage": "English",
+  "password": "password123"
+}
+
+###
+
+### 3. Login (Local)
+POST {{localUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "farmer@aqashrimp.ai",
+  "password": "password123"
+}
+
+###
+
+### 4. Get User Profile (Local - Replace TOKEN with actual JWT)
+GET {{localUrl}}/api/user/profile
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+###
+
+### 5. Update User Profile (Local - Replace TOKEN with actual JWT)
+PUT {{localUrl}}/api/user/profile
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+{
+  "fullName": "Updated Farmer John",
+  "farmName": "Updated Farm Name",
+  "phone": "+919999999999",
+  "preferredLanguage": "Telugu"
+}
+
+###
